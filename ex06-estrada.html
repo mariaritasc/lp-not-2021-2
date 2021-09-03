@@ -25,6 +25,7 @@
             km = parseInt(prompt('Informe o comprimento da rodovia (maior que 200km).'))
         } while (isNaN(km) || km < 200)
 
+        /*
         while(contador <= km){        
             contador ++
             if(contador % 31 === 0){
@@ -35,6 +36,17 @@
             document.write(`Posto de Atendimento no ${contador}Km <br>`) 
             }
 
+        }
+        */
+
+        for(let contador = 1; contador <= km; contador++){
+            if(contador % 31 === 0){
+            document.write(`Pedágio no ${contador}Km <br>`)
+            }
+            
+            if(contador % 23 === 0){
+            document.write(`Posto de Atendimento no ${contador}Km <br>`) 
+            }
         }
 
 
