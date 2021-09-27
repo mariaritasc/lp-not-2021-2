@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+    <script>
+
+        // Declaração da função
+        function defCasa(dia, mes, ano) {
+            let casa, resto
+            // Cálculo do exercício
+            resto = ((ano + mes) * dia) % 4
+
+            switch (resto) {
+
+                case 0:
+                    casa = 'Gado Demais'
+                    break
+
+                case 1:
+                    casa = 'Galo de Rinha'
+                    break
+
+                case 2:
+                    casa = 'Lacraste'
+                    break
+
+                case 3:
+                    casa = 'Smilingüido'
+                    break
+
+                default:
+                    casa = null
+            }
+
+            return casa
+
+        }
+
+        // Declaração das variáveis
+        let dia, mes, ano
+
+        do {
+            dia = parseInt(prompt('Informe o dia do seu nascimento:'))
+        } while (isNaN(dia) || dia < 1 || dia > 31)
+
+        do {
+            mes = parseInt(prompt('Informe o mês do seu nascimento:'))
+        } while (isNaN(mes) || mes < 1 || mes > 12)
+
+        do {
+            ano = parseInt(prompt('Informe o ano do seu nascimento:'))
+        } while (isNaN(ano) || ano < 1921 || ano > 2021)
+
+        // Chamada da função
+        document.write(`Você pertence à casa... ${defCasa(dia, mes, ano)}!`)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
