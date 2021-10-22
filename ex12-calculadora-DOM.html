@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+
+    <div>
+        <label for="oper">Operação</label>
+        <select id="oper">
+            <option>(Selecione)</option>
+            <option>Soma (+)</option>
+            <option>Subtração (-)</option>
+            <option>Multiplicação (*)</option>
+            <option>Divisão (/)</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+
+    <div id="resultado"></div>
+
+    
+    <script>
+        let calcular = document.querySelector('#calcular')
+
+        function calculadora(){
+            let num1 = Number(document.querySelector('#num1').value)
+            let num2 = Number(document.querySelector('#num2').value)
+            let oper = document.querySelector('#oper').value
+            let resultado = document.querySelector('#resultado')
+
+            console.log(isNaN(num1) || isNaN(num2))
+            if(isNaN(num1) || isNaN(num2)){
+                alert('ERRO: Informe um número válido.')
+            }
+            let result
+
+            switch(oper){
+                case 'Soma (+)':
+                    result = num1 + num2
+                    break
+
+                case'Subtração (-)':
+                    result = num1 - num2
+                    break
+
+                case'Multiplicação (*)':
+                    result = num1 * num2
+                    break
+                
+                case 'Divisão (/)':
+                    result = num1 / num2
+                    break
+
+                default:
+                    return alert('ERRO: operador inválido!')
+            }
+            console.log(resultado)
+            resultado.innerHTML = `<br> O resultado é igual a ${result}.`
+        }
+
+        calcular.addEventListener('click', calculadora)
+
+    </script>
+    
+</body>
+</html>
