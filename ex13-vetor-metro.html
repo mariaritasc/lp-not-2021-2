@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <script>
+
+    let linha1 = [] // vetor vazio
+
+    // Pode ser feito também um único push() com todas as estações
+    linha1.push('Santa Teresinha')
+    linha1.push('Estação')
+    linha1.push('Centro')
+    linha1.push('Jardim Lima')
+    linha1.push('Aeroporto I')
+
+    // Exibindo as estação com um loop for tradicional
+    for(let i = 0; i <linha1.length; i++){
+        document.write(linha1[i] + '<br>')
+    }
+
+    document.write('<hr>')
+
+    // Inserindo estação no extremo norte, no início do vetor
+    linha1.unshift('City Petrópolis')
+
+    // Inserindo estação no extremo sul, no final do vetor
+    linha1.push('Aeroporto IV')
+
+    // Exibindo as estações com loop for...of
+    for(let estacao of linha1){
+        document.write(estacao + '<br>')
+    }
+
+    document.write('<hr>')
+
+    // Inserindo nova estação na posição onde se encontra Estação
+    linha1.splice(linha1.indexOf('Estação'), 0, 'Vila Imperador')
+
+    // Inserindo nova estação na posição onde se encontra Aeroporto I
+    linha1.splice(linha1.indexOf('Areoporto I', 0, 'Jardim Alvorada'))
+
+    // Exibindo as estação com loop for tradicional inverso
+    for(let i = linha1.length - 1; i >= 0; i--){
+        document.write(linha1[i] + '<br>')
+    }
+
+    document.write('<hr>')
+
+    // Usando o splice() para fazer a substituição do Centro por 9 de Julho e também inserindo Champagnat
+    linha1.splice(linha1.indexOf('Centro', 1, '9 de Julho', 'Champagnat'))
+
+    // Exibindo as estações com o loop for tradicional
+    for(let i = 0; i < linha1.length; i++) {
+        document.write(linha1[i] + '<br>')
+    }
+
+    document.write('<hr>')
+
+    // Remoção dos duas últimas estações
+    // linha1.splice(linha1.indexOf('Aeroporto I'), 2)
+
+    // splice() aceita posições negativas. Nesse caso, a contagem se dá
+    // a partir do último elemento, retroativamente
+    linha1.splice(-2, 2)
+
+    // Removendo a estação Santa Teresinha
+    linha1.splice(linha1.indexOf('Santa Teresinha'), 1)
+
+    // Exibindo as estações com for...of
+    for(let estacao of linha1){
+        document.write(estacao + '<br>')
+    }
+
+    document.write('<hr>')
+
+
+
+    </script>
+</body>
+</html>
