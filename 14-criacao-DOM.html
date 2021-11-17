@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de novos elementos no DOM</title>
+</head>
+<body>
+    <h1>Estados da região Nordeste</h1>
+
+    <ol id="estados" type="a">
+        <li id="al">Alagoas</li>
+        <li id="ce">Ceará</li>
+    </ol>
+
+    <script>
+
+        // Capturar o elemento correspente à lista
+        const lista = document.querySelector('#estados')
+        /**********************************************
+         * 
+         * *******************************************/
+
+         // PRIMEIRA ETAPA: a criação propriamente dita do elemento,
+         // essa tarefa cabe ao proprietário (owner), que é sempre
+         // o document. Isso é feito com uma chamada a
+         // document.createElement().
+
+         const itemPB = document.createElement('li')
+
+         // Ajustando algumas propriedades do novo elemento
+         itemPB.id = 'pb'
+         itemPB.textContent = 'Paraíba'
+
+         // SEGUNDA ETAPA: o novo elemento precisa ser associado
+         // a um pai. Uma das formas de um pai "adorar" um elemento
+         // como filho é usando appendChild().
+
+         lista.appendChild(itemPB)
+
+        
+
+    </script>
+</body>
+</html>
